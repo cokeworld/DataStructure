@@ -1,3 +1,5 @@
+package Stack;
+
 public class Ex7_1_StackMadeByArrayList {
     public static void main(String[] args) {
         ArrayStack s = new ArrayStack(5);
@@ -92,7 +94,7 @@ class ArrayStack implements StackForEx7_1 {
     }
 
     public void printStack() {
-        System.out.printf("ArrayStack >>>  ( ");
+        System.out.printf("Stack.ArrayStack >>>  ( ");
         for (int i = 0; i <= top; i++) {
             System.out.printf(itemArray[i] + ", ");
         }

@@ -1,18 +1,20 @@
+package LinkedList;
+
 public class Ex6_1_SinglyLinkedList {
     public static void main(String[] args) {
         LinkedList l = new LinkedList();
         System.out.println("1. 공백 리스트에 노드 3개 삽입하기");
-        l.insertLastNode("1월");
-        l.insertLastNode("3월");
-        l.insertLastNode("6월");
+        l.insertLastNode("1");
+        l.insertLastNode("3");
+        l.insertLastNode("6");
         l.printList();
 
         System.out.println("2. 3월 노드 뒤에 4월 노드 삽입하기");
-        ListNode pre = l.searchNode("3월");
+        ListNode pre = l.searchNode("3");
         if(pre == null) {
             System.out.println("검색실패: 찾는 데이터가 없습니다.");
         } else {
-            l.insertMiddleNode(pre, "4월");
+            l.insertMiddleNode(pre, "4");
             l.printList();
         }
 
@@ -25,7 +27,7 @@ public class Ex6_1_SinglyLinkedList {
 }
 
 
-//LinkedList
+//LinkedList.LinkedList
 class LinkedList {
     private ListNode head;
 
@@ -103,7 +105,7 @@ class LinkedList {
 
 }
 
-//ListNode
+//LinkedList.ListNode
 class ListNode {
     private String data;
     public ListNode link;

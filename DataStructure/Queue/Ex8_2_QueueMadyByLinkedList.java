@@ -1,3 +1,5 @@
+package Queue;
+
 public class Ex8_2_QueueMadyByLinkedList {
     public static void main(String[] args) {
         LinkedQueue q = new LinkedQueue();

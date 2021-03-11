@@ -1,3 +1,5 @@
+package Queue;
+
 public class Ex8_3_CircularQueueMadyByArrayList {
     public static void main(String[] args) {
         CircularQueue cq = new CircularQueue(4);
@@ -40,7 +42,7 @@ class CircularQueue implements QueueFor8_3{
     }
 
     /*     큐가 empty인 경우
-     1. CircularQueue 객체를 초기화해서 front, rear 값이 둘다 0으로 같은 경우.
+     1. Queue.CircularQueue 객체를 초기화해서 front, rear 값이 둘다 0으로 같은 경우.
      2. 마지막으로 삽입된 rear를 삭제해서 front, rear 값이 같은 경우.*/
     @Override
     public boolean isEmpty() {

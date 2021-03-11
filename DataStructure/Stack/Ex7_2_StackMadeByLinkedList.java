@@ -1,3 +1,5 @@
+package Stack;
+
 public class Ex7_2_StackMadeByLinkedList {
     public static void main(String[] args) {
         LinkedStack l = new LinkedStack();

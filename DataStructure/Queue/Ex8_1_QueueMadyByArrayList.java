@@ -1,3 +1,5 @@
+package Queue;
+
 public class Ex8_1_QueueMadyByArrayList {
     public static void main(String[] args) {
         ArrayQueue q = new ArrayQueue(5);
@@ -51,8 +53,8 @@ class ArrayQueue implements QueueForEx8_1 {
         if (isFull()) {
             System.out.println("Queue is full");
         } else {
-           queueArray[++rear] = item;
-           System.out.println("Inserted Item: " + item);
+            queueArray[++rear] = item;
+            System.out.println("Inserted Item: " + item);
         }
     }
 
