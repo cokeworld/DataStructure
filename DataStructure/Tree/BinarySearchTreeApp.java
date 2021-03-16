@@ -16,7 +16,7 @@ public class BinarySearchTreeApp {
         bst.printBST();
 
         System.out.println("SearchBst >>> ");
-        Tree_node searchBST1 = bst.searchBST(8);
+        Tree_node searchBST1 = bst.searchBST(4);
         if (searchBST1 != null) {
             System.out.println("Searching Success! Searched Key: " + searchBST1.data);
         } else {
@@ -50,10 +50,10 @@ class BinarySearchTree {
         if (p == null) {
             return newNode;
         } else if (p.data > newNode.data) {
-            p = insertKey(p.left, newNode.data);
+            p.left = insertKey(p.left, key);
             return p;
         } else if (p.data < newNode.data) {
-            p = insertKey(p.right, newNode.data);
+            p.right = insertKey(p.right, key);
             return p;
         } else return p;
     }
@@ -67,7 +67,7 @@ class BinarySearchTree {
         while (p != null) {
             if (p.data > key) {
                 p = p.left;
-            } else if (p.data <key) {
+            } else if (p.data < key) {
                 p = p.right;
             } else if (p.data == key) {
                 return p;
@@ -79,7 +79,7 @@ class BinarySearchTree {
     public void inorder(Tree_node root) {
         if (root != null) {
             inorder(root.left);
-            System.out.printf(Integer.toString(root.data));
+            System.out.printf(Integer.toString(root.data) + " ");
             inorder(root.right);
         }
     }
