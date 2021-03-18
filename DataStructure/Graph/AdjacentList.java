@@ -1,5 +1,5 @@
 package Graph;
-
+// 연결 자료구조 방식을 이용한 그래프의 구현: 인접 리스트
 public class AdjacentList {
     public static void main(String[] args) {
         AdjList al = new AdjList();
