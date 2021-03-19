@@ -6,22 +6,19 @@ public class DFS_BFS {
         for (int i = 0; i < 6; i++) {
             G.insertVertex(i);
         }
-        G.insertEdge(0,3);
+        G.insertEdge(0,2);
         G.insertEdge(0,1);
-        G.insertEdge(1,5);
+        G.insertEdge(1,4);
         G.insertEdge(1,3);
-        G.insertEdge(2,1);
-        G.insertEdge(3,4);
-        G.insertEdge(3,1);
-        G.insertEdge(4,3);
-        G.insertEdge(4,0);
-        G.insertEdge(5,4);
-        G.insertEdge(5,2);
-        G.insertEdge(5,1);
-        G.insertEdge(5,0);
+        G.insertEdge(2,5);
+
 
         G.printAdjList();
 
+        System.out.printf("\nDFS >>> ");
+        G.DFS(0);
+
+        System.out.printf("\nBFS >>> ");
         G.BFS(0);
     }
 }
@@ -29,7 +26,6 @@ public class DFS_BFS {
 class StackNode{
     int data;
     StackNode link;
-
 }
 
 class LinkedStack {
@@ -68,8 +64,8 @@ class LinkedQueue {
     QNode rear;
 
     public LinkedQueue() {
-        this.front = null;
-        this.rear = null;
+        front = null;
+        rear = null;
     }
 
     public boolean isEmpty() {
@@ -112,7 +108,7 @@ class GraphNodeForFS {
 
 class AdjListForFs {
     GraphNodeForFS head[] = new GraphNodeForFS[10];
-    int totalVertex = 0;
+    private int totalVertex = 0;
 
     // vertex 값 삽입 발생x, totalVertex 카운트 용 메소드
     public void insertVertex(int data) {
@@ -139,6 +135,7 @@ class AdjListForFs {
                 System.out.printf("-> " + temp.vertex);
                 temp = temp.link;
             }
+            System.out.println();
         }
     }
 
@@ -150,15 +147,14 @@ class AdjListForFs {
         stack.push(vertex);
         visited[vertex] = true;
         System.out.printf(vertex + " ");
-        while (stack != null) {
+        while (stack.top != null) {
             gNode = head[vertex];
             while (gNode != null) {
-                int nowVertex = gNode.vertex;
-                if (!visited[nowVertex]) {
-                    visited[nowVertex] = true;
-                    System.out.printf(nowVertex + " ");
-                    stack.push(nowVertex);
-                    gNode = head[nowVertex];
+                if (visited[gNode.vertex]==false) {
+                    visited[gNode.vertex] = true;
+                    System.out.printf(gNode.vertex + " ");
+                    stack.push(gNode.vertex);
+                    gNode = head[gNode.vertex];
                 } else {
                     gNode = gNode.link;
                 }
@@ -173,15 +169,15 @@ class AdjListForFs {
         boolean visited[] = new boolean[10];
 
         visited[vertex] = true;
+        System.out.printf(" %d", vertex);
         queue.enQueue(vertex);
-        System.out.printf(vertex + " ");
 
-        while (!queue.isEmpty()) {
+        while (queue.isEmpty()==false) {
             vertex = queue.deQueue();
             for (gNode = head[vertex]; gNode != null; gNode = gNode.link) {
-                if (!visited[gNode.vertex]) {
+                if (visited[gNode.vertex]==false) {
                     visited[gNode.vertex] = true;
-                    System.out.printf(gNode.vertex + " ");
+                    System.out.printf(" %d", gNode.vertex);
                     queue.enQueue(gNode.vertex);
                 }
             }
